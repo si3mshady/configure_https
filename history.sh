@@ -17,3 +17,7 @@ openssl x509 -req -in domain.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out d
 
 # Edit hosts file for local testing 
 sudo vi /etc/hosts
+
+# 127.0.0.1 lamararnold.com
+# 127.0.0.1 elliottarnold.com
+# 127.0.0.1 elliottnewsaas.com
