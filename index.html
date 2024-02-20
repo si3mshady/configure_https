@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh; /* Make body take up entire viewport height */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        h1 {
+            font-weight: bold;
+        }
+        #dynamicImage {
+            max-width: 100%; /* Set maximum width to 100% */
+            max-height: 100%; /* Set maximum height to 100% */
+        }
+    </style>
+</head>
+<body>
+    <h1>Congratulations Elliott</h1>
+    <img id="dynamicImage" src="#" alt="Dynamic Image">
+    <script>
+        // Define an array of image URLs
+        var imageUrls = [
+            "https://64.media.tumblr.com/e405c4b74c4c2fe26da1668ebb73a466/5b2aa7bd0c119d53-4e/s540x810/98f8aebfe71e35d38d369457d7b4a6d519cd89d7.gif",
+            "https://64.media.tumblr.com/f370ba6200d7f4e722bfc8c3e0152087/5b2aa7bd0c119d53-89/s540x810/e30b58f64d5f6a9f7efd3138eb135dabc8fec7d4.gif",
+            "https://64.media.tumblr.com/5b0ece6dea8b0255317dcb4918c7bfbe/5b2aa7bd0c119d53-f8/s540x810/a2fa98bfab387462555f2de15f7e54ca1a960d21.gif",
+            "https://64.media.tumblr.com/640db3cd976e1020ff7108a23367fe74/5b2aa7bd0c119d53-f5/s540x810/2d2db54cbc933613a0be8c7edabc5cac696441b7.gif",
+            "https://64.media.tumblr.com/2021281f86fb785a3220aaaaa6a441bd/5b2aa7bd0c119d53-cb/s540x810/36fd1663fb8b9a8a657d813bce1392b3b9dc931d.gif"
+
+
+            
+        ];
+
+        var currentIndex = 0;
+
+        // Function to update the image source
+        function updateImage() {
+            var imageUrl = imageUrls[currentIndex];
+            document.getElementById('dynamicImage').src = imageUrl;
+            currentIndex = (currentIndex + 1) % imageUrls.length; // Increment index, loop back to 0 if exceeds array length
+        }
+
+        // Call the updateImage function initially
+        updateImage();
+
+        // JavaScript code to update the image source every 2 seconds
+        setInterval(updateImage, 4000); // Update every 2 seconds (2000 milliseconds)
+    </script>
+</body>
+</html>
